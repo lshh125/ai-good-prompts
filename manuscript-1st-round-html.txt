@@ -1,0 +1,108 @@
+Title: First-Round Manuscript Logic Map
+Description: Map a student's manuscript from experiment inputs and outputs to paragraph claims and the overall argument, with separate local logic checks to support the reader's own judgment.
+
+Create an English-language HTML reading companion for my first editorial pass through the supplied manuscript.
+
+I know the general project but may not know its experimental implementation. Help me understand what the author claims, what the manuscript reports, and how the two connect, so I can form my own judgment first.
+
+READER CONTEXT
+Project background: [Optional brief context.]
+Particular questions I want to inspect: [Optional.]
+
+Use this context to clarify terminology, not to supply arguments or evidence missing from the manuscript.
+
+EDITORIAL APPROACH
+- Describe the manuscript before evaluating it. Do not provide an overall verdict, score, recommendation, praise, or strengths-and-weaknesses summary.
+- Separate the author's statements, your reconstruction of their connections, and information not specified in the supplied material. An AI reconstruction is an interpretation, not an established fact.
+- Preserve qualifications and scope. Do not silently strengthen, repair, or rewrite the argument.
+- Keep the initial view descriptive. Put local logic checks in separate, closed-by-default panels beside the relevant passages, without warning badges, severity rankings, or issue counts.
+- Do not require a criticism for every paragraph or experiment. Include a local check only when there is a specific textual or evidential basis for it.
+
+CONTENT
+
+1. The author's big picture
+Briefly identify the stated research question, objective, and central claims, with references. Label central claims C1, C2, and so on, and use those labels consistently.
+
+Distinguish the project's goal from what the manuscript claims to have demonstrated. If no single central claim is explicit, describe the ambiguity rather than inventing one. Do not assess the project's importance, novelty, or overall quality.
+
+2. Experiment input/output map
+Give each relevant experiment or analysis a stable ID, such as E1. Summarize:
+- Input: data, materials, population, task, and relevant conditions.
+- Operation: what is done, at a conceptual level.
+- Comparison: baseline, control, or alternative, if applicable.
+- Output: what is measured or produced, including what the metric means.
+- Reported result: the actual finding, preserving important quantities and uncertainty.
+- Author's interpretation: what the manuscript concludes from that result.
+- Connection: which central claim the author uses it to address and the reasoning connecting the measured output to that claim, with source references. Identify any necessary unstated premise as your reconstruction, without assuming it is true.
+
+Keep the measured result and the author's interpretation in separate fields. A reported result has not been independently verified by this exercise.
+
+Omit coding and implementation detail unless it changes what the output means or what can be inferred. When a detail matters, explain its consequence briefly: for example, which cases are compared, what the evaluation unit is, or whether evaluation data also informed training or selection. Do not turn this into an implementation audit.
+
+Use "not specified" or "not applicable" where appropriate. For non-experimental arguments, use the analogous premises, analytical operation, and resulting conclusion instead of inventing an experiment.
+
+3. Paragraph-by-paragraph reading map
+Cover every substantive main-text paragraph in manuscript order. Give each a stable ID based on section and paragraph number. Explain the coverage of captions, tables, footnotes, and appendices; include them wherever they bear on a mapped claim.
+
+Left column:
+- The original paragraph, preserving its wording, numbers, citations, and qualifications.
+- Its paragraph ID and source location.
+
+Right column, kept concise:
+- The paragraph's specific assertion or contribution in one sentence.
+- Its function in context, such as background, question, setup, result, interpretation, qualification, or transition.
+- Which central claim, experiment, or earlier paragraph it connects to, and how.
+- The evidence or premise cited for its assertion, where applicable.
+
+Describe the actual content, rather than merely saying "provides evidence" or "supports the thesis." Do not manufacture a claim for a paragraph that only supplies context or a transition. Allow "connection not explicit" and distinguish it from "irrelevant."
+
+4. Two-way argument coverage
+Provide a compact index linking each central claim to the paragraphs and results used to develop it. Link back from paragraph annotations to the same claim IDs.
+
+Distinguish passages that state a claim, explain it, report evidence, or interpret that evidence. A mention is not itself evidence.
+
+Show which steps are explicitly connected in the text and which connections are your reconstruction. Where no connection is identified, state that descriptively. Do not grade claims as "supported" or "unsupported" or declare that a missing textual connection makes a claim false.
+
+5. Local logic checks (optional to read)
+Place each check in a closed-by-default panel labeled "Local logic check" at the relevant passage. Do not preview its conclusion in the initial reading map.
+
+For each check:
+- Identify the exact claim and relevant result or premise, with references.
+- Describe the specific mismatch, ambiguity, contradiction, or missing inferential step.
+- Distinguish what is observable in the text from what depends on an unstated condition.
+- State what clarification, narrower wording, or additional evidence would resolve the question, without drafting a replacement paragraph.
+
+Use conditional language when appropriate. Check relevant supplied sections and appendices before reporting a connection as absent. Distinguish absent information from unavailable or unreadable material.
+
+Example of the desired tone:
+"The reported comparison concerns dataset A under condition B. This sentence extends the claim to condition C; a justification for that extension is not identified in the supplied manuscript."
+
+Avoid verdicts such as "the experiment is flawed" or "the argument is weak," speculative lists of possible problems, leading questions, and unsolicited rewrite suggestions. Specific, documented contradictions or scope mismatches may be stated directly.
+
+ACCURACY AND SCOPE
+- Use the supplied manuscript as the source. Identify any necessary background explanation as supplementary.
+- Reference sections, paragraphs, figures, tables, or equations precisely. Do not fabricate quotations, values, references, page numbers, or findings from cited papers.
+- Preserve distinctions between observed results and explanations, association and causation, and tested conditions and broader claims.
+- Do not infer that a method was omitted in practice merely because it is not described in the manuscript.
+- If the manuscript is incomplete or too long to cover fully, identify the covered and uncovered sections. Do not silently skip paragraphs or claim complete coverage.
+- Finish with the source-coverage note, not an overall assessment or a list of editing priorities.
+
+HTML OUTPUT
+Produce a single HTML file with embedded CSS. Use English throughout.
+
+Order: author's big picture, experiment input/output map, two-way argument index, then paragraph-by-paragraph reading map. Include sticky section navigation and working links between claim, experiment, paragraph, and figure references where available.
+
+Use a two-column desktop layout with original text on the left and its corresponding annotation on the right. Keep each pair in its own row so annotations stay aligned. On mobile, place each paragraph immediately before its annotation.
+
+Use a deep navy navigation bar, an off-white page background, and restrained annotation cards. Prefer Lora for manuscript text and IBM Plex Sans for interface text, with system-font fallbacks. Do not require external libraries.
+
+Highlight only essential phrases, using colors for roles rather than quality judgments:
+- Yellow: claims.
+- Blue: reported results or evidence.
+- Purple: experiment setup or analytical method.
+- Teal: scope restrictions or qualifications.
+
+Include a legend and text labels. Do not use traffic-light validity colors. Use native HTML details/summary elements for local logic checks, closed by default. Keep those checks closed in the initial view and out of printed output unless explicitly expanded for printing.
+
+MANUSCRIPT
+[Attach or paste the manuscript, including relevant figures, captions, tables, and appendices where available.]
