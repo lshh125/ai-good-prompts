@@ -1,0 +1,102 @@
+Title: Understand a Paper’s Argument
+Description: Build understanding through an argument map, close reading of key passages, explanations of decisive evidence, and self-check questions.
+
+Create an English-language reading guide for the supplied academic paper.
+
+The goal is to help me explain, in my own words:
+- What question the paper addresses.
+- What it contributes.
+- Why its evidence or reasoning supports its claims.
+- What assumptions and limitations affect its conclusions.
+
+READER CONTEXT
+My background: [Specify; otherwise assume a university-educated reader unfamiliar with this field.]
+Reading purpose: [General understanding / seminar discussion / evaluating the research / applying it.]
+Close-reading scope: [Default: selected key passages. Optional: every paragraph.]
+
+CONTENT
+
+1. Start with the big picture
+Explain:
+- What specific question motivates the paper, and why it matters.
+- What previous explanations, methods, or knowledge leave unresolved.
+- The central contribution in one precise sentence, preserving important qualifications.
+- What would change in our understanding if the author is right.
+
+Avoid vague statements such as “offers valuable insights.” Explain what the insight actually is.
+
+2. Map the argument
+Identify the main claims and how they connect. For each central claim, explain:
+- What exactly is being claimed.
+- What evidence, derivation, or textual analysis supports it.
+- Why that support counts as a reason to accept the claim.
+- What assumptions connect the support to the conclusion.
+- How far the conclusion extends and what remains unresolved.
+
+Adapt the structure to the paper. Empirical, theoretical, methodological, and interpretive papers may require different forms of analysis.
+
+Provide verifiable references to sections, pages, figures, tables, or equations. Do not invent page numbers.
+
+3. Explain the decisive material
+Select the figures, results, equations, or passages that matter most to understanding the paper.
+
+For each, explain:
+- How to read it.
+- Which details matter.
+- How it advances the argument.
+
+Explain essential concepts in accessible language, followed by their precise meaning. Use concrete examples when helpful, clearly distinguishing examples from the paper from your own teaching examples.
+
+4. Annotate key passages
+By default, select the passages most important to the argument and briefly explain why you chose them.
+
+Left column:
+- The original passage, preserving wording, numbers, and qualifications.
+- A reference identifying its location.
+
+Right column:
+- The passage’s function and connection to the surrounding argument.
+- The explanation most useful for understanding it.
+- Any specific argumentative technique, unstated assumption, or limitation worth examining.
+
+Annotations must discuss the passage’s actual content. Labels such as “provides evidence” or “introduces the topic” are insufficient on their own.
+
+Identify weaknesses only when there is a concrete basis for doing so. Not every passage needs criticism or every annotation category.
+
+5. Check understanding
+Finish with:
+- The three most important takeaways.
+- Three self-check questions: one about the central idea, one about the relationship between evidence and claim, and one about the conclusion’s boundaries.
+- Suggested answers in separate collapsible sections so I can try answering first.
+
+ACCURACY
+- Distinguish the author’s explicit statements, your reconstruction of the argument, and supplementary background.
+- Preserve uncertainty, conditions, and the distinction between association and causation where relevant.
+- Do not fabricate quotations, data, citations, or counterarguments.
+- Identify missing, unreadable, or uncertain material.
+- Support evaluations with specific details from the paper.
+
+HTML OUTPUT
+Produce a single HTML file with embedded CSS.
+
+Place the overview and argument map first, followed by the annotated passages and self-check questions.
+
+Include:
+- Sticky section navigation.
+- A two-column desktop layout: original passages on the left, corresponding commentary on the right.
+- A mobile layout that places each passage immediately before its commentary.
+- A deep navy navigation bar and off-white page background.
+- Lora for original passages and IBM Plex Sans for interface text, with system-font fallbacks.
+- Commentary cards with a subtle background and colored left border.
+
+Highlight only essential phrases:
+- Yellow: central claims.
+- Red: key concepts.
+- Blue: evidence.
+- Green: concessions or responses to objections.
+- Purple: methods.
+
+Include a legend and text labels so meaning does not depend on color alone.
+
+PAPER
+[Attach or paste the paper.]
