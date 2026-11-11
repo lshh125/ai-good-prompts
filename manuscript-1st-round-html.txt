@@ -1,108 +1,65 @@
-Title: First-Round Manuscript Logic Map
-Description: Map a student's manuscript from experiment inputs and outputs to paragraph claims and the overall argument, with separate local logic checks to support the reader's own judgment.
+Title: First-Round Manuscript with Margin Notes
+Description: Read a manuscript as a continuous article with concise margin comments connecting experimental inputs, outputs, and claims, while leaving the overall judgment to the reader.
 
-Create an English-language HTML reading companion for my first editorial pass through the supplied manuscript.
+Create an English-language HTML reading companion for my first editorial pass through the supplied manuscript. It should feel like reading an article with comments in the margin of a PDF.
 
-I know the general project but may not know its experimental implementation. Help me understand what the author claims, what the manuscript reports, and how the two connect, so I can form my own judgment first.
+I know the general project but may not know its experimental implementation. Help me understand the reported results and the reasoning connecting them to the paper's claims, so I can form my own judgment first.
 
-READER CONTEXT
+CONTEXT
 Project background: [Optional brief context.]
-Particular questions I want to inspect: [Optional.]
+Questions I want to inspect: [Optional.]
+Use this context to clarify terminology, not to fill gaps in the manuscript's argument.
 
-Use this context to clarify terminology, not to supply arguments or evidence missing from the manuscript.
+ARTICLE FIRST
+- Preserve the original article in order: title, authors, abstract, headings, paragraphs, figures, captions, tables, equations, citations, and references, wherever supplied.
+- Keep paragraphs flowing naturally within each section or subsection. Use ordinary academic typography and spacing. Do not turn paragraphs into cards, numbered blocks, or separate text/comment rows.
+- Layout divisions are allowed at section or subsection boundaries. Do not insert explanations, labels, or summaries between the article's paragraphs.
+- Keep the author's wording and qualifications intact. Correct extraction artifacts such as broken line wraps only when the intended text is unambiguous. Identify missing or unreadable material instead of inventing it.
 
-EDITORIAL APPROACH
-- Describe the manuscript before evaluating it. Do not provide an overall verdict, score, recommendation, praise, or strengths-and-weaknesses summary.
-- Separate the author's statements, your reconstruction of their connections, and information not specified in the supplied material. An AI reconstruction is an interpretation, not an established fact.
-- Preserve qualifications and scope. Do not silently strengthen, repair, or rewrite the argument.
-- Keep the initial view descriptive. Put local logic checks in separate, closed-by-default panels beside the relevant passages, without warning badges, severity rankings, or issue counts.
-- Do not require a criticism for every paragraph or experiment. Include a local check only when there is a specific textual or evidential basis for it.
+MARGIN COMMENTS
+Read the whole supplied manuscript, but annotate selectively. A comment may address a sentence, several related paragraphs, a figure, or an entire subsection. Do not require a comment for every paragraph.
 
-CONTENT
+Use brief notes, usually one to three sentences, to clarify:
+- What a passage specifically claims or adds to the argument.
+- Which earlier result or premise it draws on, and how.
+- Which central claim it develops, qualifies, or interprets.
 
-1. The author's big picture
-Briefly identify the stated research question, objective, and central claims, with references. Label central claims C1, C2, and so on, and use those labels consistently.
+At relevant experiments, explain the input, high-level operation or comparison, measured output, reported result, and author's interpretation. Keep the measured result distinct from the conclusion drawn from it. Include implementation details only when they change what the result means or what can be inferred, and explain that consequence briefly.
 
-Distinguish the project's goal from what the manuscript claims to have demonstrated. If no single central claim is explicit, describe the ambiguity rather than inventing one. Do not assess the project's importance, novelty, or overall quality.
+Describe specific connections rather than merely labeling passages "background" or "provides evidence." Context and transitions need not make claims. Leave straightforward passages unannotated.
 
-2. Experiment input/output map
-Give each relevant experiment or analysis a stable ID, such as E1. Summarize:
-- Input: data, materials, population, task, and relevant conditions.
-- Operation: what is done, at a conceptual level.
-- Comparison: baseline, control, or alternative, if applicable.
-- Output: what is measured or produced, including what the metric means.
-- Reported result: the actual finding, preserving important quantities and uncertainty.
-- Author's interpretation: what the manuscript concludes from that result.
-- Connection: which central claim the author uses it to address and the reasoning connecting the measured output to that claim, with source references. Identify any necessary unstated premise as your reconstruction, without assuming it is true.
+NEUTRAL FIRST PASS
+- Do not give an overall verdict, score, praise, recommendation, or strengths-and-weaknesses summary. Do not rewrite the manuscript.
+- Distinguish the author's explicit statements, your reconstruction of their connections, and information not specified. Label inferred premises rather than treating them as established facts.
+- Preserve the distinctions between reported results and explanations, tested conditions and broader claims, and association and causation.
+- Put specific logic concerns in closed-by-default "Local logic check" panels within the relevant margin note. Keep the visible note descriptive; do not preview the concern through warning colors, severity labels, or verdicts.
+- Include a check only for a concrete mismatch, ambiguity, contradiction, or missing inferential step. Reference the exact claim and relevant result, explain the connection in question, and state what information would clarify it. Use conditional language when an unstated detail matters.
+- Check the relevant supplied sections and appendices before reporting a connection as absent. Missing description does not establish that a procedure was omitted or a claim is false. Avoid speculative problem lists and leading questions.
 
-Keep the measured result and the author's interpretation in separate fields. A reported result has not been independently verified by this exercise.
-
-Omit coding and implementation detail unless it changes what the output means or what can be inferred. When a detail matters, explain its consequence briefly: for example, which cases are compared, what the evaluation unit is, or whether evaluation data also informed training or selection. Do not turn this into an implementation audit.
-
-Use "not specified" or "not applicable" where appropriate. For non-experimental arguments, use the analogous premises, analytical operation, and resulting conclusion instead of inventing an experiment.
-
-3. Paragraph-by-paragraph reading map
-Cover every substantive main-text paragraph in manuscript order. Give each a stable ID based on section and paragraph number. Explain the coverage of captions, tables, footnotes, and appendices; include them wherever they bear on a mapped claim.
-
-Left column:
-- The original paragraph, preserving its wording, numbers, citations, and qualifications.
-- Its paragraph ID and source location.
-
-Right column, kept concise:
-- The paragraph's specific assertion or contribution in one sentence.
-- Its function in context, such as background, question, setup, result, interpretation, qualification, or transition.
-- Which central claim, experiment, or earlier paragraph it connects to, and how.
-- The evidence or premise cited for its assertion, where applicable.
-
-Describe the actual content, rather than merely saying "provides evidence" or "supports the thesis." Do not manufacture a claim for a paragraph that only supplies context or a transition. Allow "connection not explicit" and distinguish it from "irrelevant."
-
-4. Two-way argument coverage
-Provide a compact index linking each central claim to the paragraphs and results used to develop it. Link back from paragraph annotations to the same claim IDs.
-
-Distinguish passages that state a claim, explain it, report evidence, or interpret that evidence. A mention is not itself evidence.
-
-Show which steps are explicitly connected in the text and which connections are your reconstruction. Where no connection is identified, state that descriptively. Do not grade claims as "supported" or "unsupported" or declare that a missing textual connection makes a claim false.
-
-5. Local logic checks (optional to read)
-Place each check in a closed-by-default panel labeled "Local logic check" at the relevant passage. Do not preview its conclusion in the initial reading map.
-
-For each check:
-- Identify the exact claim and relevant result or premise, with references.
-- Describe the specific mismatch, ambiguity, contradiction, or missing inferential step.
-- Distinguish what is observable in the text from what depends on an unstated condition.
-- State what clarification, narrower wording, or additional evidence would resolve the question, without drafting a replacement paragraph.
-
-Use conditional language when appropriate. Check relevant supplied sections and appendices before reporting a connection as absent. Distinguish absent information from unavailable or unreadable material.
-
-Example of the desired tone:
+Example of a local check:
 "The reported comparison concerns dataset A under condition B. This sentence extends the claim to condition C; a justification for that extension is not identified in the supplied manuscript."
 
-Avoid verdicts such as "the experiment is flawed" or "the argument is weak," speculative lists of possible problems, leading questions, and unsolicited rewrite suggestions. Specific, documented contradictions or scope mismatches may be stated directly.
+OPTIONAL READING MAP
+Provide a compact, closed-by-default "Reading map" outside the article body, containing:
+- The author's stated question, objective, and central claims, with consistent claim IDs.
+- One concise entry per experiment: input, operation/comparison, output, reported result, and the claim it is used to address. Explain the stated or inferred reasoning connecting result to claim.
+- A two-way index linking central claims to the passages and results that state, develop, or qualify them, and linking relevant margin notes back to those claims. Distinguish mentioning a claim from providing evidence for it.
 
-ACCURACY AND SCOPE
-- Use the supplied manuscript as the source. Identify any necessary background explanation as supplementary.
-- Reference sections, paragraphs, figures, tables, or equations precisely. Do not fabricate quotations, values, references, page numbers, or findings from cited papers.
-- Preserve distinctions between observed results and explanations, association and causation, and tested conditions and broader claims.
-- Do not infer that a method was omitted in practice merely because it is not described in the manuscript.
-- If the manuscript is incomplete or too long to cover fully, identify the covered and uncovered sections. Do not silently skip paragraphs or claim complete coverage.
-- Finish with the source-coverage note, not an overall assessment or a list of editing priorities.
+Keep this map descriptive. Label reconstructed links and unstated premises, allow "connection not explicit," and do not assign "supported/unsupported" grades. For non-experimental arguments, map the corresponding premises and conclusions. Do not invent a central claim where the manuscript is ambiguous.
 
-HTML OUTPUT
-Produce a single HTML file with embedded CSS. Use English throughout.
+HTML LAYOUT
+Produce a single HTML file with embedded CSS and no required external libraries.
+- Make the article the main reading surface, with a narrower annotation rail on the right. Group layout by section or subsection, keeping the article text in normal continuous flow within each group.
+- Link comments to their passages using small, neutral markers and working links in both directions. Keep anchor IDs unobtrusive; do not display paragraph numbers or repeated metadata throughout the article.
+- Place notes near their anchors where practical. Stack or collapse crowded notes in the rail rather than adding gaps between article paragraphs. Notes must not overlap or cover the text.
+- Include compact sticky section navigation and a show/hide margin-notes control. Keep the reading map and local logic checks closed initially so the article dominates the first view.
+- On narrow screens, open notes on demand from their markers, or collect them after the corresponding subsection. Preserve uninterrupted paragraph flow.
+- Use an off-white paper background, restrained navy controls, readable serif article text, and smaller sans-serif notes. Lora and IBM Plex Sans are optional, with system-font fallbacks. Keep highlights sparse and subtle; use labels rather than colors to communicate comment roles.
 
-Order: author's big picture, experiment input/output map, two-way argument index, then paragraph-by-paragraph reading map. Include sticky section navigation and working links between claim, experiment, paragraph, and figure references where available.
+ACCURACY AND COVERAGE
+Use precise source references without inventing quotations, values, page numbers, or findings from cited work. Label supplementary background. Report unavailable figures or other source material explicitly.
 
-Use a two-column desktop layout with original text on the left and its corresponding annotation on the right. Keep each pair in its own row so annotations stay aligned. On mobile, place each paragraph immediately before its annotation.
-
-Use a deep navy navigation bar, an off-white page background, and restrained annotation cards. Prefer Lora for manuscript text and IBM Plex Sans for interface text, with system-font fallbacks. Do not require external libraries.
-
-Highlight only essential phrases, using colors for roles rather than quality judgments:
-- Yellow: claims.
-- Blue: reported results or evidence.
-- Purple: experiment setup or analytical method.
-- Teal: scope restrictions or qualifications.
-
-Include a legend and text labels. Do not use traffic-light validity colors. Use native HTML details/summary elements for local logic checks, closed by default. Keep those checks closed in the initial view and out of printed output unless explicitly expanded for printing.
+Finish with a brief source-coverage note identifying any omitted or unreadable sections or assets. Do not silently skip content or imply complete coverage when the source or output is incomplete. End without an overall assessment or editing-priority list.
 
 MANUSCRIPT
 [Attach or paste the manuscript, including relevant figures, captions, tables, and appendices where available.]
